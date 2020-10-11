@@ -3,6 +3,8 @@ import typescript from 'rollup-plugin-typescript2'
 import livereload from 'rollup-plugin-livereload'
 import serve from 'rollup-plugin-serve'
 
+const dev = process.env.ROLLUP_WATCH
+
 export default {
   input: './src/index.ts',
   output: {
@@ -10,8 +12,8 @@ export default {
     format: 'cjs'
   },
   plugins: [
-    serve('dist'),
-    livereload('dist'),
+    dev && serve('dist'),
+    dev && livereload('dist'),
     typescript(),
     sass({ output: './dist/bundle.css' })
   ]
