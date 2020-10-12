@@ -5,6 +5,7 @@ import serve from 'rollup-plugin-serve'
 import { terser } from 'rollup-plugin-terser'
 import postcss from 'postcss'
 import cssnano from 'cssnano'
+import sassRuntime from 'sass'
 
 const dev = process.env.ROLLUP_WATCH
 
@@ -18,7 +19,8 @@ export default {
     dev && serve('./dist'),
     dev && livereload('./dist'),
     typescript(),
-    sass({ 
+    sass({
+      runtime: sassRuntime,
       output: './dist/bundle.css', 
       processor: css => postcss(dev ? [] : [cssnano])
         .process(css)

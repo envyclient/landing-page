@@ -1,9 +1,9 @@
 export function sizeNavbar () {
   const 
     navbar = <HTMLElement>document.querySelector('.nav'),
-    landing = <HTMLElement>document.querySelector('.landing')
+    landing = <HTMLElement>document.querySelector('.landing .content')
 
-  landing.style.paddingTop = navbar.clientHeight + 15 + 'px'
+  landing.style.top = `calc(30% + ${ navbar.clientHeight }px)`
 }
 
 export function scrollNavbar () {

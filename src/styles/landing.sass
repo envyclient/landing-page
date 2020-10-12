@@ -1,7 +1,37 @@
 @import '_variables.sass'
 
-@mixin landing()
-  background: linear-gradient(0deg, $background-color 20%, $dark-theme-color 65%, $theme-color 100%)
+=landing
+  position: relative
+  background-image: url('/img/hero.png')
   background-repeat: no-repeat
-  background-size: contain
+  background-size: cover
   height: 53em
+
+  &::before 
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 10
+    background: linear-gradient(-10deg, $background-color 30%, rgba($dark-theme-color, .85) 68%, rgba($theme-color, .7) 100%)
+    background-repeat: no-repeat
+    background-size: contain
+
+  .content
+    position: absolute
+    top: 50%
+    left: 20vw
+    z-index: 20
+    transform: translateY(-50%)
+
+    h1
+      color: $secondary-text
+      text-transform: uppercase
+      font-size: 3.3em
+      font-weight: 400
+
+      span
+        color: $primary-text
+        font-weight: 600
