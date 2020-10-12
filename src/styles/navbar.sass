@@ -1,0 +1,79 @@
+@import '_variables.sass'
+  
+@mixin nav()
+  position: fixed
+  display: flex
+  top: 0
+  left: 0
+  right: 0
+  padding: .5em 2.3em
+  z-index: 100
+  align-items: center
+  justify-content: space-between
+  background-color: rgba($theme-color, .65)
+  -webkit-backdrop-filter: blur(5px)
+  backdrop-filter: blur(5px)
+  border-bottom: 1px solid $dark-theme-color
+  transition: all .3s
+
+  a
+    user-select: none
+    -moz-user-select: none
+    -webkit-user-select: none
+
+    &.logo
+      display: block
+      text-decoration: none
+      height: 2.2em
+      transition: all .23s
+
+      &:hover
+        opacity: .8
+
+      &:active
+        transform: scale(.8)
+
+      img
+        height: 100%
+
+  .menu
+    display: flex
+    align-items: center
+
+    a
+      position: relative
+      color: $primary-text
+      text-decoration: none
+      margin: 0 1em
+      font-size: .95em
+      font-weight: 500
+      text-transform: uppercase
+      transition: all .27s
+
+      &:last-child
+        margin-right: 0
+
+      &::after
+        content: ''
+        position: absolute
+        bottom: -.2em
+        left: 0
+        right: 0
+        background-color: $primary-text
+        height: 0
+        transition: all .3s
+
+      &:hover
+        opacity: .75
+
+      &.active::after
+        height: 1px
+
+  &:not(.scrolled)
+    background-color: transparent
+    -webkit-backdrop-filter: blur(5px)
+    backdrop-filter: blur(5px)
+    border-bottom-color: rgba(0, 0, 0, 0)
+
+    a.logo
+      opacity: 0

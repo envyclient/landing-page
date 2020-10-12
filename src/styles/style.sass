@@ -1,6 +1,22 @@
-@import "_variables.sass"
+@import 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap'
+@import '_variables.sass'
+@import 'navbar.sass'
+@import 'landing.sass'
 
 body
   margin: 0
   background-color: $background-color
   color: $primary-text
+  font-family: $font-family
+
+::selection
+  background-color: $dark-theme-color
+
+h1, h2, h3, h4, h5, h6
+  margin: 0
+
+.nav
+  @include nav()
+
+.landing
+  @include landing()
