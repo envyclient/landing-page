@@ -1,0 +1,28 @@
+@import '_variables.sass'
+
+=btn
+  color: $primary-text
+  display: block
+  font-family: $gamer-font
+  font-weight: 500
+  font-size: 1.35em
+  text-transform: uppercase
+  padding: .37em 1.4em
+  cursor: pointer
+  text-decoration: none
+  border: 4px solid $theme-color
+  outline: none
+  user-select: none
+  -moz-user-select: none
+  -webkit-user-select: none
+  background-color: transparent
+  white-space: nowrap
+  vertical-align: middle
+  text-align: center
+  touch-action: manipulation
+  transform-origin: top left
+  transition: all .3s ease-in-out
+
+  &:hover
+    transform: skewX(-5deg)
+    background-color: $theme-color
