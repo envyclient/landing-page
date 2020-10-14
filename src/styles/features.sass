@@ -1,0 +1,56 @@
+@import '_variables.sass'
+
+=features
+  padding: 1.5em ($section-side-padding / 3 * 2) 2em
+
+  h1
+    color: $primary-text
+    text-transform: uppercase
+    font-size: 2.7em
+    text-align: center
+    margin-bottom: 1.05em
+
+    span.separator
+      margin-top: .15em
+
+  .feature
+    $image-width: 70%
+    display: flex
+    align-items: center
+    margin: 1em 0
+
+    .feature-image
+      width: 38%
+
+      img
+        display: block
+        margin: 0 auto
+        width: $image-width
+        box-shadow: 0 0 20px 13px rgba($theme-color, .7)
+        transform: rotate3d(67, 177, 52, 28deg)
+
+    .feature-content
+      $padding-right: (100% - $image-width) / 4
+      width: 52% - $padding-right
+      padding-right: $padding-right
+
+      h1
+        font-size: 1.95rem
+        color: rgba($primary-text, .87)
+        text-transform: uppercase
+        margin-bottom: .8rem
+        text-align: left
+
+      p
+        font-size: 1.15rem
+        color: $secondary-text
+        text-align: justify
+        text-transform: none
+        font-weight: 400
+
+    &.right  
+      .feature-image img
+        transform: rotate3d(67, 177, 52, -28deg)
+
+      .feature-content
+        padding-left: (100% - $image-width) / 4

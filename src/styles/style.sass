@@ -5,6 +5,7 @@
 @import 'landing.sass'
 @import 'button.sass'
 @import 'intro.sass'
+@import 'features.sass'
 
 html
   scroll-behavior: smooth
@@ -24,6 +25,13 @@ h1, h2, h3, h4, h5, h6
 p
   margin: 0
 
+.separator
+  display: block
+  margin: 0 auto
+  width: 2em
+  height: .1em
+  background-color: $theme-color
+
 .nav
   +nav
 
@@ -35,3 +43,6 @@ p
 
 .intro
   +intro
+
+.features
+  +features
