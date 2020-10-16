@@ -1,0 +1,61 @@
+@use 'sass:color'
+@import '_variables.sass'
+
+=media
+  position: relative
+  background-image: url('/img/hero.png')
+  background-repeat: no-repeat
+  background-size: cover
+  height: 32.5em
+
+  &::before 
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 10
+    background: linear-gradient(-4deg, $background-color 16%, rgba($dark-theme-color, .85) 40%, rgba($theme-color, .7) 60%, color.adjust(rgba($dark-theme-color, .85), $lightness: -35%) 75%, #000000 100%)
+    background-repeat: no-repeat
+    background-size: contain
+
+  .media-content
+    $side: ($section-side-padding / 3 * 2)
+    position: absolute
+    top: 5em
+    left: $side
+    right: $side
+    z-index: 20
+
+    h1
+      color: $primary-text
+      text-transform: uppercase
+      font-size: 2.7em
+      text-align: center
+      margin-bottom: 1.05em
+
+      span.separator
+        margin-top: .15em
+
+    .videos
+      display: flex
+      align-items: center
+      justify-content: space-between
+
+      .video-container
+        position: relative
+        overflow: hidden
+        width: 46%
+
+        &::after
+          content: ''
+          display: block
+          padding-top: 56.25%
+
+        iframe
+          position: absolute
+          top: 0
+          left: 0
+          width: 100%
+          height: 100%
