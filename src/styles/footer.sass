@@ -34,6 +34,11 @@
         text-decoration: none
         transition: all .3s
 
+        @media screen and (max-width: $mobile-width)
+          user-select: none
+          -moz-user-select: none
+          -webkit-user-select: none
+
         &::after
           content: ''
           position: absolute

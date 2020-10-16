@@ -1,34 +1,63 @@
 @import '_variables.sass'
 
 =pricing
-  padding: 1.45em ($section-side-padding / 3 * 2) 3em
+  padding: 0 ($section-side-padding / 3 * 2) 5%
 
   h1
     color: $primary-text
     text-transform: uppercase
     font-size: 2.7em
     text-align: center
-    margin-bottom: 1.05em
+    margin-bottom: 2.2em
 
     span.separator
       margin-top: .15em
 
   .price-tables
-    display: flex
-    align-items: center
-    justify-content: space-between
+    text-align: center
 
     .price
-      $side: 1em
-      width: calc(28.5% - #{2 * $side})
-      padding: 2em $side
+      position: relative
+      padding: 3.5em 3em
+      margin: 0 5%
+      display: inline-block
+      background-color: $background-color
+      text-align: center
       border-radius: 8px
-      box-shadow: 0 0 20px 13px rgba($theme-color, .5)
-      margin: 0 auto
-      transition: all .23s
+      border-left: 1px solid rgba($theme-color, 0)
+      border-right: 1px solid rgba($theme-color, 0)
+      transition: all .18s
+
+      @media screen and (max-width: $mobile-width)
+        display: block
+        user-select: none
+        -moz-user-select: none
+        -webkit-user-select: none
+
+        &:not(:last-child)
+          margin-bottom: 3em
+
+      &::after, &::before
+        content: ''
+        position: absolute
+        box-shadow: 0 -6px 20px 5px rgba($theme-color, .5)
+        background-color: $theme-color
+        border-radius: 8px
+        height: 10%
+        top: -.2em
+        left: 0
+        right: 0
+        z-index: -1
+
+      &::before
+        bottom: -.2em
+        top: unset
+        background-color: rgba($theme-color, .6)
+        box-shadow: 0 -6px 20px 5px rgba($theme-color, .3)
 
       &:hover
-        box-shadow: 0 0 20px 13px rgba($theme-color, .7)
+        border-left-color: rgba($theme-color, .5)
+        border-right-color: rgba($theme-color, .5)
 
       h1
         font-size: 2em

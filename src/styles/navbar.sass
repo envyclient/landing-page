@@ -18,9 +18,13 @@
   transition: all .3s
 
   a
-    user-select: none
-    -moz-user-select: none
-    -webkit-user-select: none
+    @media screen and (max-width: $mobile-width)
+      user-select: none
+      -moz-user-select: none
+      -webkit-user-select: none
+
+      &:not(:last-child)
+        display: none
 
     &.logo
       display: block

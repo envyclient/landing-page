@@ -6,9 +6,9 @@
   background-image: url('/img/hero.png')
   background-repeat: no-repeat
   background-size: cover
-  height: 32.5em
+  height: 100vh
 
-  &::before 
+  &::before
     content: ''
     position: absolute
     top: 0
@@ -23,10 +23,11 @@
   .media-content
     $side: ($section-side-padding / 3 * 2)
     position: absolute
-    top: 5em
+    top: 50%
     left: $side
     right: $side
     z-index: 20
+    transform: translateY(-50%)
 
     h1
       color: $primary-text
@@ -38,15 +39,27 @@
       span.separator
         margin-top: .15em
 
+      @media screen and (max-width: $mobile-width)
+        margin-bottom: .6em
+
     .videos
       display: flex
       align-items: center
       justify-content: space-between
 
+      @media screen and (max-width: $mobile-width)
+        display: block
+
       .video-container
         position: relative
         overflow: hidden
         width: 46%
+
+        @media screen and (max-width: $mobile-width)
+          width: 100%
+
+          &:not(:last-child)
+            margin-bottom: 2em
 
         &::after
           content: ''

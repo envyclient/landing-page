@@ -5,7 +5,7 @@
   background-image: url('/img/hero.png')
   background-repeat: no-repeat
   background-size: cover
-  height: 53em
+  height: 100vh
 
   &::before 
     content: ''
@@ -29,8 +29,18 @@
     z-index: 20
     transform: translateY(-50%)
 
+    @media screen and (max-width: $mobile-width)
+      top: 50% !important
+      transform: translateY(-50%) !important
+
     .landing-container
       width: 50%
+
+      @media screen and (max-width: $mobile-width)
+        width: 100%
+
+        &:nth-child(2)
+          display: none
 
       img
         width: 100%
@@ -62,12 +72,20 @@
         display: flex
         width: 25em
 
+        @media screen and (max-width: $mobile-width)
+          display: block
+          width: 100%
+
         .btn
           margin: 0 5px
           padding:
             left: 0
             right: 0
           width: 50%
+
+          @media screen and (max-width: $mobile-width)
+            width: 100%
+            margin-bottom: 1em
 
           &::first-child
             margin-left: 0
