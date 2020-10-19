@@ -3,7 +3,8 @@ export function sizeNavbar () {
     navbar = <HTMLElement>document.querySelector('.nav'),
     landing = <HTMLElement>document.querySelector('.landing .content')
 
-  landing.style.top = `calc(30% + ${ navbar.clientHeight }px)`
+  if(landing !== null)
+    landing.style.top = `calc(30% + ${ navbar?.clientHeight }px)`
 }
 
 export function scrollNavbar () {

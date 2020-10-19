@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Envy Client | Log In</title>
+    <title>Envy Client | Register</title>
 
     <link rel="icon" sizes="16x16" href="/img/favicon-16x16.png">
     <link rel="icon" sizes="32x32" href="/img/favicon-32x32.png">
 
-    <meta content="Envy Client | Log In" property="og:title">
+    <meta content="Envy Client | Register" property="og:title">
     <meta content="Official website of the Envy Client" property="og:description">
     <meta content="https://envyclient.com/img/logo.svg" property="og:image">
     <meta content="128" property="og:image:width">
@@ -21,7 +21,7 @@
   <body class="login">
     <form class="login-form" method="POST">
       <h1>
-        Sign In
+        Register
         <span class="separator"></span>
       </h1>
       <div class="input-container">
@@ -29,11 +29,19 @@
         <input name="password" type="text" placeholder="Enter your username...">
       </div>
       <div class="input-container">
+        <span class="label">Email</span>
+        <input name="email" type="email" placeholder="Enter your email...">
+      </div>
+      <div class="input-container">
         <span class="label">Password</span>
         <input name="password" type="password" placeholder="Enter your password...">
       </div>
-      <input type="submit" class="btn" value="Log In">
-      <p><a href="/forgotten-password.html">Forgotten password</a> or <a href="/register.html">Register</a></p>
+      <div class="input-container">
+        <span class="label">Retype password</span>
+        <input name="password" type="password-again" placeholder="Enter your password...">
+      </div>
+      <input type="submit" class="btn" value="Sign Up">
+      <p><a href="/login.html">Log In</a></p>
     </form>
 
     <script src="/bundle.js"></script>
