@@ -8,6 +8,7 @@
 @import 'media.sass'
 @import 'pricing.sass'
 @import 'footer.sass'
+@import 'login.sass'
 
 html
   scroll-behavior: smooth
@@ -17,6 +18,9 @@ body
   background-color: $background-color
   color: $primary-text
   font-family: $main-font
+
+  &.login
+    +login-body
 
 ::selection
   background-color: $theme-color
@@ -54,3 +58,6 @@ p
 
 .footer
   +footer
+
+.login-form
+  +login

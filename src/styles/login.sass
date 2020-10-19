@@ -1,0 +1,85 @@
+@import '_variables.sass'
+
+=login-body
+  position: relative
+  background-image: url('/img/hero.png')
+  background-repeat: no-repeat
+  background-size: cover
+  min-height: 100vh
+
+  &::before 
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 10
+    background: linear-gradient(-10deg, $background-color 30%, rgba($dark-theme-color, .85) 68%, rgba($theme-color, .7) 100%)
+    background-repeat: no-repeat
+    background-size: contain
+  
+=login
+  position: absolute
+  top: 50%
+  left: 50%
+  z-index: 10
+  transform: translate(-50%, -50%)
+  border: 2px solid $theme-color
+  padding: 1em 2em
+
+  @media screen and (max-width: 720px)
+    border: none
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    transform: none
+
+  h1
+    color: $primary-text
+    text-transform: uppercase
+    font-size: 2.7em
+    text-align: center
+    margin-bottom: .44em
+
+    span.separator
+      margin-top: .15em
+
+  .input-container
+    margin-bottom: .23em
+
+    span, input
+      display: block
+      font-family: $gamer-font
+      text-transform: uppercase
+      font-weight: 500
+      font-size: 1.15em
+
+    span
+      color: $primary-text
+      margin-bottom: .17em
+
+    input
+      $side: .8em
+      $border: 2px
+      border: $border solid $theme-color
+      padding: .37em .8em
+      color: $secondary-text
+      outline: none
+      background-color: transparent
+      width: calc(100% - #{$side * 2} - #{$border * 2})
+
+  input.btn
+    width: 100%
+    margin-top: .45em
+    margin-bottom: .23em
+
+  p
+    text-align: center
+    color: $secondary-text
+    font-size: .85em
+
+    a
+      color: $secondary-text
+      text-decoration: underline
